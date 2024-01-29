@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    background-color: #123;
+}
+.page-header{
+  height:50vh;
+  width:100%;
+  position: sticky;
+  top:0px;
+  z-index:990;
+} 
+.on-min{
+  display:none;
+}
+.on-minDiv{
+  display:none;
+}
+.header {
+    overflow: hidden;
+    background-color: #0b1622;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    display:flex;
+    justify-content:space-between;
+}
+.header img {
+    width: 50px;
+}
+.header a {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+}
+.book-button{
+    padding: 12px;
+    border-radius: 50px;
+    margin-right:10px;
+    font-size: 18px;
+    color:red;
+}
+.butt1{
+  /* margin-top: 2vh; */
+  padding:15px;
+}
+.book-button a{
+    color:black !important;
+}
+
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  .footer{
+    bottom:0;
+    position: relative;
+    z-index: 99;
+    /* height:15vh; */
+    width:100%;
+    overflow: hidden;
+    background-color: #0b1622;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.foot-left,.foot-mid,.foot-right{
+  padding:15px;
+  height:100%;
+  width:33%;
+  color:white;
+  text-align:justify;
+}
+  @media (max-width: 420px){
+    .header-right {
+      display:none;
+    }
+    .on-min{
+      display:block;
+      height:fit-content;
+      padding:3vh;
+      cursor:pointer;
+    }
+    .on-minDiv{
+      height:40vh;
+      width:100%;
+      overflow:hidden;
+      background-color: #0b1622;
+      display:flex; 
+      flex-direction: column;
+      align-items:center;
+    }
+    .on-minDiv a {
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      float:left;
+  }
+  .book-button{
+    width:50vw;
+    padding: 5px 10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .butt1{
+    margin-top: 2vh;
+    padding:15px;
+  }
+  .footer{
+    /* height:50vh; */
+    flex-direction:column;
+  }
+}
+  
+/* .no-page{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+} */
+
+

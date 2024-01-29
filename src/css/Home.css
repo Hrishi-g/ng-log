@@ -1,0 +1,29 @@
+.home-main{
+    height:100vh;
+    width:100%;
+    background-color:white;
+    position:absolute;
+    top:13vh;
+    /* overflow:hidden; */
+}
+.home-top-img img{
+    object-fit: fill;
+    /* background-repeat: no-repeat; */
+    /* background-position: 50% 50%;   */ 
+    width:100vw;
+    height:50vh;
+}
+.home-btn{
+    display:flex;
+    justify-content:center;
+}
+.home-discription{
+    padding:5rem;
+    text-align: justify;
+    /* letter-spacing: 1px; */
+}
+@media (max-width: 420px) {
+    .home-main{
+        height:110%;
+    }
+}
