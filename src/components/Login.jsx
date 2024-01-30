@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import '../css/Form.css';
 import { signInWithEmailAndPassword,sendPasswordResetEmail} from 'firebase/auth';
 import {auth} from '../firebase';
@@ -7,7 +7,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 export default function SignUp() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [details,setDeatails] = useState({
     email:"",
