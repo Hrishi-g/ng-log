@@ -4,6 +4,10 @@
     background-color:white;
     position:absolute;
     top:13vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     /* overflow:hidden; */
 }
 .home-top-img img{
@@ -18,12 +22,20 @@
     justify-content:center;
 }
 .home-discription{
-    padding:5rem;
+    padding:2rem;
     text-align: justify;
     /* letter-spacing: 1px; */
 }
+.signUp-btn{
+    margin-bottom: 10px;
+}
+.signUp-btn button{
+    background-color: #76b852;
+    color: white;
+    border-radius: 5px;
+}
 @media (max-width: 420px) {
     .home-main{
-        height:110%;
+        height:fit-content;
     }
 }
