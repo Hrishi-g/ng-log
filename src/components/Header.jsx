@@ -29,7 +29,7 @@ export default function Header() {
     </div>
     {open && (
     <div className='on-minDiv'>
-      <Link to="/">Home</Link>
+      <Link to="/home">Home</Link>
       <Link to="/alldata">Show Data</Link>
       <button className="book-button"><Link to="/entry">Entry</Link></button>
       <button className="book-button butt1" onClick={logout}>LogOut</button>
