@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase';
 import { ref,onValue,remove,update } from 'firebase/database';
+import { Link } from "react-router-dom";
 import Header from './Header';
 import '../css/AllData.css';
 import '../css/EntryForm.css';
@@ -89,7 +90,7 @@ export default function AllData() {
   }
 
     const toggleModal = (vehicle_no,company_name,customer_name,load,unload,chalan_no,driver_name,total_rate,other_exp,uuid) => {
-      console.log("clicked");
+      // console.log("clicked");
       setUid(uuid);
       setModal(!modal);
       setValue({
@@ -115,7 +116,7 @@ export default function AllData() {
     }
 
     const confirmDel = (uid) => {
-      console.log(uid);
+      // console.log(uid);
       remove(ref(db,`/${uid}`));
       alert("Data Deleted");
       setdelModal(!delModal);
@@ -251,17 +252,17 @@ export default function AllData() {
 <nav>
   <ul className='pagination'>
   <li className='page-item'>
-    <a href="#" className='page-link' onClick={prevPage}>Prev</a>
+  <Link to="#" className='page-link' onClick={prevPage}>Prev</Link>
   </li>
   {
     numbers.map((n, i) => (
       <li className={`page-item ${currentPage === n ? 'active' : ''}`} key={i}>
-        <a href="#" className='page-link' onClick={()=>changePage(n)}>{n}</a>
+        <Link to="#" className='page-link' onClick={()=>changePage(n)}>{n}</Link>
       </li>
     ))
   }
   <li className='page-item'>
-    <a href="#" className='page-link' onClick={nextPage}>Next</a>
+  <Link to="#" className='page-link' onClick={nextPage}>Next</Link>
   </li>
 </ul>
 </nav>
