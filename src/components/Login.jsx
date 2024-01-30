@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../css/Form.css';
 import { signInWithEmailAndPassword,sendPasswordResetEmail} from 'firebase/auth';
 import {auth} from '../firebase';
@@ -7,7 +7,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 export default function SignUp() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [details,setDeatails] = useState({
     email:"",
@@ -39,7 +39,10 @@ export default function SignUp() {
       signInWithEmailAndPassword(auth,details.email,details.password)
     .then((userCredentials)=>{
       localStorage.setItem("isAuthenticated", "true");
-      window.location.pathname = "/home";
+      // window.location.pathname = "/home";
+      // <Navigate to="/home"replace={true}/>
+      let path = `home`; 
+      navigate(path);
       alert("welcome");
     }).catch((err)=>{
       alert(err);
