@@ -89,6 +89,7 @@ export default function AllData() {
   }
 
     const toggleModal = (vehicle_no,company_name,customer_name,load,unload,chalan_no,driver_name,total_rate,other_exp,uuid) => {
+      console.log("clicked");
       setUid(uuid);
       setModal(!modal);
       setValue({
