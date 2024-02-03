@@ -25,6 +25,7 @@ body {
 }
 .header img {
     width: 50px;
+    color: red;
 }
 .header a {
     color: rgb(255, 255, 255);
@@ -48,11 +49,48 @@ body {
 .book-button a{
     color:black !important;
 }
-
-  .header-right {
+.header-right {
     display: flex;
     align-items: center;
-  }
+}
+.logOut-popup{
+  height:100vh;
+    width:100vw;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(49,49,49,0.8);
+    position:absolute;
+    top:-1vh;
+    z-index:99;
+}
+.inside-logOut{
+  padding: 0.5rem;
+  height:15vh;
+  width:40vw;
+  background-color:white;
+  border-radius: 10px;
+}
+.logOut-btn{
+  float: right;
+  color: red;
+  border-radius: 5px;
+}
+.logOut-top {
+  height: 60%;
+}
+.logOut-bottom {
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logOut-bottom button{
+  border-radius: 5px;
+  background-color: #76b852;
+  color: white;
+}
 
   @media (max-width: 420px){
     .header-right {
@@ -65,7 +103,7 @@ body {
       cursor:pointer;
     }
     .on-minDiv{
-      height:40vh;
+      height:45vh;
       width:100%;
       overflow:hidden;
       background-color: #0b1622;

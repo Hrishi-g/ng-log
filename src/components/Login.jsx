@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Form.css';
 import 'firebase/auth';
-import { setPersistence, browserLocalPersistence } from 'firebase/auth';
-import { signInWithEmailAndPassword,sendPasswordResetEmail} from 'firebase/auth';
+import { signInWithEmailAndPassword,sendPasswordResetEmail } from 'firebase/auth';
 import {auth} from '../firebase';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -38,22 +37,18 @@ export default function SignUp() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    setPersistence(auth, browserLocalPersistence).then(() => {
       signInWithEmailAndPassword(auth,details.email,details.password)
-      .then((userCredentials)=>{
-        localStorage.setItem("isAuthenticated", "true");
-        // window.location.pathname = "/home";
-        // <Navigate to="/home"replace={true}/>
+      .then(()=>{
         let path = `home`; 
         navigate(path);
         alert("welcome");
+        // localStorage.setItem("isAuthenticated", "true");
+        // console.log(userCredentials);
+        // window.location.pathname = "/home";
+        // <Navigate to="/home"replace={true}/>
       }).catch((err)=>{
         alert(err);
       })
-    })
-    .catch((error) => {
-      console.error('Error setting persistence:', error);
-    });
   }
 
   const passIconCick = () => {

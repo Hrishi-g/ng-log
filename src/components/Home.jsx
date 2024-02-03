@@ -11,7 +11,7 @@ export default function Home() {
         <Header/>
     <div className='home-main'>
         <div className='home-top-img'>
-            <img src="truck4.jpg" alt="" />
+            <img src="truck4.jpg" alt="truck img" />
         </div>
         <div className='home-discription'>
        <p>

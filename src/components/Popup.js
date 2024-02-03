@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../css/AllData.css';
 import { db } from '../firebase';
 import { set,ref, update,onValue } from 'firebase/database';
-import '../css/Popup.css';
+import '../css/Popup.css';dqwkdnqwdnkqwd;nklqwdnkl
 
 
 export default function Popup(props) {
@@ -14,9 +14,9 @@ export default function Popup(props) {
     // load:props.load,
     // unload:props.unload,
     // load_date:props.load_date,
-    // unload_date:props.unload_date,
     // total_rate:props.total_rate,
-    // diseal_rate:props.diseal_rate,
+    // diseal_    // unload_date:props.,unload_date
+rate:props.diseal_rate,
     // vehicle_no:props.vehicle_no
 })
 const [date,setdate] = useState(new Date().toLocaleDateString()+' '+new Date().toLocaleTimeString());
