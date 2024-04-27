@@ -39,9 +39,9 @@ export default function SignUp() {
     e.preventDefault();
       signInWithEmailAndPassword(auth,details.email,details.password)
       .then(()=>{
-        let path = `home`; 
-        navigate(path);
+        // let path = `home`;
         alert("welcome");
+        navigate('/home');
         // localStorage.setItem("isAuthenticated", "true");
         // console.log(userCredentials);
         // window.location.pathname = "/home";

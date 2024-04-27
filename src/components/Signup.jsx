@@ -73,9 +73,9 @@ export default function Login() {
 			<div className="agileits-top">
 				<form>
         {/* <label htmlFor="name">Name</label>
-					<input className="text" type="text" name="name" required="" onChange={handleChange} value={details.name}/> */}
+					<input className="text" type="text" name="name" required onChange={handleChange} value={details.name}/> */}
         <label htmlFor="email">Email</label>
-					<input className="text email" type="email" name="email" required="" onChange={handleChange} value={details.email}/>
+					<input className="text email" type="email" name="email" required onChange={handleChange} value={details.email}/>
           <span className='span-error'>
             {
             (details.email.length)===0?"":
@@ -84,7 +84,7 @@ export default function Login() {
           </span>
           <label htmlFor="password">Password</label>
           <div className='input-icon'>
-					<input className="text" type={pass_sym} name="password" required="" onChange={handleChange} value={details.password}/>
+					<input className="text" type={pass_sym} name="password" required onChange={handleChange} value={details.password}/>
           <span className='pass-span' onClick={passIconCick}>
             {
               (click)?<VisibilityIcon/>:<VisibilityOffIcon/>
@@ -99,7 +99,7 @@ export default function Login() {
           </span>
           <label htmlFor="c_password">Confirm Password</label>
           <div className='input-icon'>
-          <input className="text w3lpass" type={c_pass_sym} name="c_password" required="" onChange={handleChange} value={details.c_password}/>
+          <input className="text w3lpass" type={c_pass_sym} name="c_password" required onChange={handleChange} value={details.c_password}/>
           <span className='c_pass-span' onClick={c_passIconCick}>
             {
               (c_click)?<VisibilityIcon/>:<VisibilityOffIcon/>

@@ -93,46 +93,49 @@ function App() {
   const [login, setLogin] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setLogin(!!user); 
-      setLoading(false);
-    });
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
+  //     setLogin(!!user); 
+  //     setLoading(false);
+  //   });
 
-    // Cleanup the listener when the component is unmounted
-    return () => unsubscribe();
-  }, [auth, setLogin]);
+  //   // Cleanup the listener when the component is unmounted
+  //   return () => unsubscribe();
+  // }, [auth, setLogin]);
 
-  if (loading) {
-    // Render a loading indicator while checking authentication state
-    return <div>
-       <LoadingScreen
-    loading={true}
-    bgColor='#76b852'
-    spinnerColor='#9ee5f8'
-    textColor='white'
-    logoSrc='load.png'
-    text='Loading...'
-  > 
-  </LoadingScreen>
-    </div>;
-  }
+  // if (loading) {
+  //   // Render a loading indicator while checking authentication state
+  //   return <div>
+  //      <LoadingScreen
+  //   loading={true}
+  //   bgColor='#76b852'
+  //   spinnerColor='#9ee5f8'
+  //   textColor='white'
+  //   logoSrc='load.png'
+  //   text='Loading...'
+  // > 
+  // </LoadingScreen>
+  //   </div>;
+  // }
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        {login ? (
+        <Route path="/home" element={<Home />} />
+        <Route path="/entry" element={<EntryForm />} />
+        <Route path="/alldata" element={<AllData />} />
+        <Route path="/signup" element={<SignUp />} />
+/
+        {/* {login ? (
           <>
             <Route path="/home" element={<Home />} />
-            {/* Other routes */}
             <Route path="/entry" element={<EntryForm />} />
-            <Route path="/alldata" element={<AllData />} />
             <Route path="/admin/signup" element={<SignUp />} />
           </>
         ) : (
           <Route path="/*" element={<Navigate to="/" />} />
-        )}
+        )} */}
         <Route path="/*" element={<NoPage />} />
       </Routes>
     </Router>

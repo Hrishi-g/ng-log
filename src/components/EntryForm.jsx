@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { db } from '../firebase';
 import { set,ref } from 'firebase/database';
+import { getAuth, setPersistence, browserLocalPersistence, signOut } from 'firebase/auth';
 import { uid } from 'uid';
+import { useNavigate } from "react-router-dom";
 import '../css/EntryForm.css';
 import Header from './Header';
 
 export default function EntryForm() {
+  const navigate = useNavigate();
     const [values,setValue] = useState({
         company_name:"",
         customer_name:"",
@@ -18,6 +21,7 @@ export default function EntryForm() {
         vehicle_no:""
     })
 
+    const [authenticated, setAuthenticated] = useState(false);
     const [date,setdate] = useState(new Date().toLocaleDateString()+' '+new Date().toLocaleTimeString());
 
     const handleChange = (e) => {
@@ -26,6 +30,21 @@ export default function EntryForm() {
           return{...prev,[name]:value}
         })
       }
+
+      useEffect(() => {
+        const auth = getAuth();
+        setPersistence(auth, browserLocalPersistence)
+          .then(() => {
+            const unsubscribe = auth.onAuthStateChanged((user) => {
+              if (user) {
+                setAuthenticated(true);
+              } else {
+                setAuthenticated(false);
+              }
+            });
+            return unsubscribe;
+          });
+      }, []);
 
       const handleClick = async (e) => {
         e.preventDefault();
@@ -79,6 +98,8 @@ export default function EntryForm() {
 
   return (
     <>
+    {authenticated ? (
+        <>
     <Header/>
     <div className='entryform-main'>
     <div className='entry-background'>
@@ -145,6 +166,8 @@ export default function EntryForm() {
     <input type="text" className='vehicle-no' name='vehicle_no' onChange={handleChange} value={values.vehicle_no} required/>
     <button type="button" onClick={handleClick} className="btn btn-success">Success</button>
     </div>
+    </>):
+     navigate('/*')}
     </>
 
   )
